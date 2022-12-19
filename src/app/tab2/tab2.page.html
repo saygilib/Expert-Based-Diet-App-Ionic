@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Diet Blogs
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ng-container *ngIf="Blogs; else elseTemplate">
+    <ion-card button *ngFor="let blog of Blogs">
+      <ion-card-title>{{blog.title}}</ion-card-title>
+      <ion-card-subtitle>{{blog.link}}</ion-card-subtitle>
+      <ion-card-content>{{blog.text}}</ion-card-content>
+    </ion-card>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <ion-text>There were no related blog found.</ion-text>
+    <!-- <ion-text>Please add one...</ion-text> -->
+  </ng-template>
+</ion-content>
